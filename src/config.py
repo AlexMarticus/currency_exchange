@@ -2,6 +2,8 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    APIKEY_CURRENCY_DATA: str
+    PASSWORD_SALT: str
     DB_HOST: str
     DB_PORT: str
     DB_USER: str

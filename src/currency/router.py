@@ -1,17 +1,17 @@
 from fastapi import APIRouter
 
 
-auth_router = APIRouter(
+currency_router = APIRouter(
     prefix="/currency",
     tags=["Currency"]
 )
 
 
-@auth_router.get("/exchange")
+@currency_router.get("/exchange")
 async def get_exchange():
     pass
 
 
-@auth_router.get("/list")
+@currency_router.get("/list")
 async def get_list():
     pass

@@ -12,7 +12,7 @@ from alembic import context
 sys.path.append(os.path.join(sys.path[0], 'src'))
 
 from src.config import settings
-from src.auth.models import User
+from src.auth.models import Users
 from src.database import Base
 
 # this is the Alembic Config object, which provides

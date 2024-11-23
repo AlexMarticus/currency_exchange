@@ -1,8 +1,12 @@
 from abc import ABC, abstractmethod
+
+from src.auth.repository import UserRepository
 from src.database import async_session_maker
 
 
 class IUnitOfWork(ABC):
+    user_repos: UserRepository
+
     @abstractmethod
     def __init__(self):
         ...
@@ -30,6 +34,8 @@ class UnitOfWork(IUnitOfWork):
 
     async def __aenter__(self):
         self.session = self.session_factory()
+
+        self.user_repos = UserRepository(self.session)
 
     async def __aexit__(self, *args):
         await self.rollback()
